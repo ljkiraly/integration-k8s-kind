@@ -27,7 +27,7 @@ jobs:
 
   ### SINGLE CLUSTER
   kind:
-    runs-on: ubuntu-latest
+    runs-on: sh-ljkiraly-docker
     strategy:
       fail-fast: false
       matrix:
@@ -89,7 +89,7 @@ jobs:
 
   ### SINGLE IPv6 CLUSTER
   kind-ipv6:
-    runs-on: ubuntu-latest
+    runs-on: sh-ljkiraly-docker
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
@@ -137,7 +137,7 @@ jobs:
 
   ### HEAL EXTENDED SUITE
   kind-heal-extended:
-    runs-on: ubuntu-latest
+    runs-on: sh-ljkiraly-docker
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
@@ -180,7 +180,7 @@ jobs:
 
   ### Tanzu mechanism permutation testing
   tanzu-unmanaged:
-    runs-on: ubuntu-latest
+    runs-on: sh-ljkiraly-docker
     env:
       KUBERNETES_VERSION: "v1.27.2"
     steps:
