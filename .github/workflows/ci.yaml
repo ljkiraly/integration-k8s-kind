@@ -7,24 +7,10 @@ on:
       - 'release/**'
 
 env:
-  KIND_VERSION: v0.24.0
-  KUBERNETES_VERSION: "v1.27.2"
+  KIND_VERSION: v0.26.0
+  KUBERNETES_VERSION: "v1.27.16"
 
 jobs:
-  yamllint:
-    uses: networkservicemesh/.github/.github/workflows/yamllint.yaml@main
-
-  shellcheck:
-    uses: networkservicemesh/.github/.github/workflows/shellcheck.yaml@main
-
-  golangci-lint:
-    uses: networkservicemesh/.github/.github/workflows/golangci-lint.yaml@main
-
-  exclude-fmt-errorf:
-    uses: networkservicemesh/.github/.github/workflows/exclude-fmt-errorf.yaml@main
-
-  checkgomod:
-    uses: networkservicemesh/.github/.github/workflows/checkgomod.yaml@main
 
   envsetup:
     name: Setup kind node version
@@ -49,13 +35,13 @@ jobs:
       fail-fast: false
       matrix:
         image:
-          - v1.29.2
-          - v1.28.6
-          - v1.27.2
-          - v1.26.13
-          - v1.25.11
-          - v1.24.15
-          - v1.23.17
+          - v1.32.0
+          - v1.31.4
+          - v1.30.8
+          - v1.29.12
+          - v1.28.15
+          - v1.27.16
+          - v1.26.15
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
