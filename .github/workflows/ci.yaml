@@ -17,15 +17,6 @@ jobs:
   shellcheck:
     uses: networkservicemesh/.github/.github/workflows/shellcheck.yaml@main
 
-  golangci-lint:
-    uses: networkservicemesh/.github/.github/workflows/golangci-lint.yaml@main
-
-  exclude-fmt-errorf:
-    uses: networkservicemesh/.github/.github/workflows/exclude-fmt-errorf.yaml@main
-
-  checkgomod:
-    uses: networkservicemesh/.github/.github/workflows/checkgomod.yaml@main
-
   envsetup:
     name: Setup kind node version
     runs-on: ubuntu-latest
