@@ -7,8 +7,8 @@ on:
       - 'release/**'
 
 env:
-  KIND_VERSION: v0.24.0
-  KUBERNETES_VERSION: "v1.27.2"
+  KIND_VERSION: v0.27.0
+  KUBERNETES_VERSION: "v1.27.16"
 
 jobs:
   yamllint:
@@ -49,13 +49,13 @@ jobs:
       fail-fast: false
       matrix:
         image:
-          - v1.29.2
-          - v1.28.6
-          - v1.27.2
-          - v1.26.13
-          - v1.25.11
-          - v1.24.15
-          - v1.23.17
+          - v1.32.2
+          - v1.31.6
+          - v1.30.10
+          - v1.29.14
+          - v1.28.15
+          - v1.27.16
+          - v1.26.15
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.12.1
